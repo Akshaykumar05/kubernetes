@@ -10,6 +10,8 @@ kubectl get nodes
 ```
 <img width="551" alt="image" src="https://github.com/user-attachments/assets/ff0779c0-c75f-4503-b027-7ac38e202fbb" />
 
+* ```~/.kube/config``` this file is known as the Kubeconfig file, and it is used by the kubectl command to connect and authenticate to a Kubernetes cluster.
+
 ```
 cat ~/.kube/config
 ```
@@ -40,7 +42,7 @@ kubectl describe pod
 
 * Deployment manifest file
 ```
-kubectl create deploy demo --image=mginx --dry-run=client -oyaml
+kubectl create deploy demo --image=nginx --dry-run=client -oyaml
 ```
 <img width="755" alt="image" src="https://github.com/user-attachments/assets/83803cb2-f26e-4723-ad5c-d9ec7da98814" />
 
