@@ -114,3 +114,27 @@ cat memory.stat
 ```
 <img width="653" alt="image" src="https://github.com/user-attachments/assets/1ae6b5c6-8de4-4ee8-b949-e6de87ee6003" />
 
+#### Now back on the K8s playground
+* Well run the workload inside k8s, and that workload is running on node 1
+```
+kubectl get pods -owide
+```
+```
+ssh node 01
+```
+```
+ls
+```
+* We can see the workload, where it is working
+
+```
+crictl ps
+```
+<img width="655" alt="image" src="https://github.com/user-attachments/assets/f51771a5-c951-4a27-a14a-7e37f3254cec" />
+
+```
+ps aux | grep '[n]ginx' | sort -n -k 2 | head -n 1 | awk '{print $2}'
+```
+```
+lsnp -p PID
+```
