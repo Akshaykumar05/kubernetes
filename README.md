@@ -123,6 +123,12 @@ cat memory.stat
 #### Now back on the K8s playground
 * Well run the workload inside k8s, and that workload is running on node 1
 ```
+kubectl get nodes
+```
+```
+kubectl run nginx --images=nginx
+```
+```
 kubectl get pods -owide
 ```
 ```
