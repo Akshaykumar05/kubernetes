@@ -86,10 +86,31 @@ docker ps
 ```
 docker logs my-nginx_container
 ```
+<img width="653" alt="image" src="https://github.com/user-attachments/assets/e26e18f6-b327-4668-afff-638c87002e19" />
+
 ```
 ps aux | grep '[n]ginx' | sort -n -k 2 | head -n 1 | awk '{print $2}'
 ```
 ```
 ps aux | grep '[n]ginx'
 ```
+```
+lsns -p PID
+```
+<img width="633" alt="image" src="https://github.com/user-attachments/assets/f3afaba3-7e55-4212-aa5e-9f4952e9397a" />
+* We can see in above example that we created a container and that container created its processes IDs.
+  
+* Now let's see the cgroup
+```
+cd /sys/fs/cgroup/
+```
+<img width="653" alt="image" src="https://github.com/user-attachments/assets/33a77c2b-ef80-4891-b1b1-8914d3b0650a" />
+
+```
+cd system.slice/docker_id
+```
+```
+cat memory.stat
+```
+<img width="653" alt="image" src="https://github.com/user-attachments/assets/1ae6b5c6-8de4-4ee8-b949-e6de87ee6003" />
 
