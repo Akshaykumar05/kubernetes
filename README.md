@@ -19,6 +19,12 @@ cat ~/.kube/config
 
 * Command to shows all the pods in all namespaces in your Kubernetes cluster.
 ```
+kubectl get nodes
+```
+```
+kubectl run nginx --image=nginx
+```
+```
 kubectl get pod -A
 ```
 <img width="650" alt="image" src="https://github.com/user-attachments/assets/84d4c644-6b67-47f4-8383-a3ee498b70a6" />
