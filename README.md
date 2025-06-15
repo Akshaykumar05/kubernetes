@@ -53,6 +53,8 @@ kubectl create deploy demo --image=nginx --replicas=3
 ```
 kubectl get rs
 ```
+<img width="562" alt="image" src="https://github.com/user-attachments/assets/4ac2d74a-f2ef-4429-b755-88d61404295a" />
+
 * Check total no of pods
 ```
 kubectl get pods
@@ -74,4 +76,20 @@ kubectl describe deploy
 <img width="771" alt="image" src="https://github.com/user-attachments/assets/c8be0923-b1f5-4bda-b1f1-a6576bf5267a" />
 
 
- 
+ * Go on the ubuntu terminal, we'll create a nginx container there.
+```
+docker run -d --name my-nginx_container --memory 512m --cpus 1 nginx
+```
+```
+docker ps
+```
+```
+docker logs my-nginx_container
+```
+```
+ps aux | grep '[n]ginx' | sort -n -k 2 | head -n 1 | awk '{print $2}'
+```
+```
+ps aux | grep '[n]ginx'
+```
+
