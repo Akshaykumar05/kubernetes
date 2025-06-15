@@ -150,3 +150,4 @@ ps aux | grep '[n]ginx' | sort -n -k 2 | head -n 1 | awk '{print $2}'
 ```
 lsnp -p PID
 ```
+<img width="551" alt="image" src="https://github.com/user-attachments/assets/5ef4bba1-b477-4cc9-a056-e9527dd6fe72" />
