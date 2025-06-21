@@ -1,6 +1,7 @@
 # kubernetes
 ![image](https://github.com/user-attachments/assets/b14960cc-ec47-4b73-8cc6-f65bd7e12c7c)
 
+In this repo I'm documenting the K8s learning from **Kubesimplify K8s Bootcamp** by **Saiyam Pathak** on his Youtube channel.
 
 Kubernetes (K8s) is an open-source container orchestration platform that automates many of the manual processes involved in deploying, managing, and scaling containerized applications. It essentially allows you to orchestrate clusters of virtual machines and schedule containers to run on those virtual machines. 
 ------------------------
