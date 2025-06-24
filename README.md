@@ -152,3 +152,17 @@ ps aux | grep '[n]ginx' | sort -n -k 2 | head -n 1 | awk '{print $2}'
 lsnp -p PID
 ```
 <img width="551" alt="image" src="https://github.com/user-attachments/assets/5ef4bba1-b477-4cc9-a056-e9527dd6fe72" />
+
+* Now here we can see all the namespace of this PID.
+
+---------------------------------------
+```
+kubectl config view
+```
+ This command shows the configuration stored in your kubeconfig file (typically located at ~/.kube/config) and tells kubectl how to connect to your Kubernetes cluster.
+
+* Now create CSR (We are generating a key using openssl)
+  ```
+  openssl genrsa -out akshay.key 2048
+  ```
+  
