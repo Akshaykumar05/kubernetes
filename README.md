@@ -258,3 +258,7 @@ kubectl apply -f role.yaml
  kubectl config use-context akshay-context
  ```
  <img width="653" alt="image" src="https://github.com/user-attachments/assets/a98cc8d3-4ae1-41f5-8a35-f72d4c9e5b44" />
+
+ ```
+ cat ~/.kube/config
+ ```
