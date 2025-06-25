@@ -262,3 +262,29 @@ kubectl apply -f role.yaml
  ```
  cat ~/.kube/config
  ```
+
+ ```
+ kubectl config get-contexts
+ ```
+
+ ```
+ kubectl config use-context kubernetes-admin@kubernetes
+ ```
+
+ ```
+ kubectl get pods
+ ```
+
+ ```
+ cat ~/.kube/c
+ ```
+
+ ```
+ ls ~/.kube/config
+ ```
+ ```
+ kubectl get nodes --kubeconfig ~/.kube/config
+ ```
+
+ 
+ 
