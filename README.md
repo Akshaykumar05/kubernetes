@@ -211,35 +211,49 @@ spec:
   ```
   vim role.yaml
   ```
-  ```
-  kind: Role
+```
 apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
 metadata:
-   namespace: default
-   name: pod-reader
+  namespace: default
+  name: read-pods
 rules:
 - apiGroups: [""]
   resources: ["pods"]
   verbs: ["get", "watch", "list"]
 ---
-kind: Rolebinding
-apiVersion: rbac.authorisation.k8s.io/v1
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
 metadata:
-   name: read-pods
-   namespace: default
+  name: read-pods-binding
+  namespace: default
 subjects:
 - kind: User
   name: akshay
-  apiGroup: rbac.authorisation.k8s.io
+  apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
-  name: pod-reader
-  apiGroup:rbac.authorisation.k8s.io
-:
-
+  name: read-pods
+  apiGroup: rbac.authorization.k8s.io
 ```
+* In the above file we created a user named **akshay** and gave the role **pod-reader** who can do the **get, watch & list** the pod.
 * Apply the changes
 
 ```
 kubectl apply -f role.yaml
 ```
+<img width="620" alt="image" src="https://github.com/user-attachments/assets/440d3969-11c8-48a9-91a1-a97cadc78cb1" />
+
+### Setup kubeconfig file
+ ```
+ kubectl config set-credentials akshay --client-certificate=akshay.crt --client-key=saiyam.key
+ ```
+ ```
+ kubectl config get-contexts
+ ```
+ ```
+ kubectl config set-context akshay-context --cluster=kubernetes --namespace=default --user=akshay
+ ```
+ ```
+ kubectl config use-context akshay-context
+ ```
