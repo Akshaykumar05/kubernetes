@@ -161,8 +161,39 @@ kubectl config view
 ```
  This command shows the configuration stored in your kubeconfig file (typically located at ~/.kube/config) and tells kubectl how to connect to your Kubernetes cluster.
 
-* Now create CSR (We are generating a key using openssl)
+* Now create CSR (Certificate Signing Requests) : We are generating a key using openssl
   ```
   openssl genrsa -out akshay.key 2048
   ```
-  
+  ```
+  openssl req -new -key akshay.key -out akshay.csr -subj "/CN=akshay/O=group1"
+  ```
+#### Sign CSE with k8s CA
+  ```
+  cat akshay.csr | base64 | tr -d '\n'
+  ```
+* Create csr
+  ```
+  vim csr.yaml
+  ```
+
+* Add following description
+```
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+   name: akshay
+spec:
+   request: BASE64_CSR      #use your generated key in place of BASE64_CSR
+   signerName: Kubernetes.io/kube-apiserver-client
+   usages:
+   - client auth
+ ```
+
+   ```
+   kubectl apply -f csr.yml
+   ```
+   ```
+   kubectl certificate approve akshay
+   ```
+
