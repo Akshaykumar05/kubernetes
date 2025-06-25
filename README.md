@@ -197,3 +197,12 @@ spec:
    kubectl certificate approve akshay
    ```
 
+   <img width="542" alt="image" src="https://github.com/user-attachments/assets/22f3cfbd-5f35-4458-bae0-09178d0ce009" />
+
+  * Now take the certificate from jsonpath using below command
+   ```
+   kubectl get csr akshay -o jsonpath='{.status.certificate}' | base64 --decode > akshay.crt
+   ```
+  * check using **ls** you will get the **.crt** file
+
+  <img width="644" alt="image" src="https://github.com/user-attachments/assets/bc470c1c-2ae9-4e44-bd1f-9e614a246348" />
