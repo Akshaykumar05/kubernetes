@@ -185,7 +185,7 @@ metadata:
    name: akshay
 spec:
    request: BASE64_CSR      #use your generated key in place of BASE64_CSR
-   signerName: Kubernetes.io/kube-apiserver-client
+   signerName: kubernetes.io/kube-apiserver-client
    usages:
    - client auth
  ```
@@ -206,3 +206,40 @@ spec:
   * check using **ls** you will get the **.crt** file
 
   <img width="644" alt="image" src="https://github.com/user-attachments/assets/bc470c1c-2ae9-4e44-bd1f-9e614a246348" />
+
+### Now we will reate role binding
+  ```
+  vim role.yaml
+  ```
+  ```
+  kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+   namespace: default
+   name: pod-reader
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
+---
+kind: Rolebinding
+apiVersion: rbac.authorisation.k8s.io/v1
+metadata:
+   name: read-pods
+   namespace: default
+subjects:
+- kind: User
+  name: akshay
+  apiGroup: rbac.authorisation.k8s.io
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup:rbac.authorisation.k8s.io
+:
+
+```
+* Apply the changes
+
+```
+kubectl apply -f role.yaml
+```
