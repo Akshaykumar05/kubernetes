@@ -287,4 +287,7 @@ kubectl apply -f role.yaml
  ```
 
  
- 
+ ### Merging multiple Kubeconfig files
+ ```
+ export KUBECONFIG=/path/to/first/config:/path/to/second/config:/path /to/third/config
+ ```
