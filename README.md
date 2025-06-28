@@ -291,3 +291,15 @@ kubectl apply -f role.yaml
  ```
  export KUBECONFIG=/path/to/first/config:/path/to/second/config:/path /to/third/config
  ```
+### local HTTP proxy
+```kubectl proxy``` is a command used in Kubernetes to create a local HTTP proxy that allows you to access the Kubernetes API server securely without needing to manually handle authentication or certificates.
+
+```
+kubectl proxy
+```
+It starts a proxy server on your local machine (default: ```http://localhost:8001```) and forwards HTTP requests to the Kubernetes API server, using your current kubeconfig credentials.
+
+```
+curl localhost:8001/apis
+```
+
