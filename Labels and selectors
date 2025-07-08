@@ -3,7 +3,5 @@
 * Labels are similar to tags in AWS or git where you use a name to quick reference.
 * So you are free to choose labels as you need it to refer an environment which is used for dev or testing or Production, refer a product group like Department A , department B.
 
-
-
 * Multiple labes\ls can be added to a single object.
 
