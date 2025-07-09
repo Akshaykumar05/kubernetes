@@ -18,12 +18,13 @@ systemctl enable docker
 
 #Set up  GPG key. This is required for intra cluster communication, it will be added to source by key on this node i.e. when k8s sends signed info to our host, it is going to accept those information because  this open GPG key present in the source key.
 
-curl -s https://packages cloud.google.com/apt/doc/apt-key.apg | sudo apt-key add
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
-# Edit source list file (apt-get install nano)
+# Add Kubernetes repository:
 
-nano /etc/apt/source.list.d/Kubernetes.list
-deb http://apt.Kubernetes.io/Kubernetes-xenial.main
+cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
 
 --> exit from nano --> ctrl+X  --> caps+Y --> enter
 
