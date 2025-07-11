@@ -61,3 +61,11 @@ sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Do
 
 --> go to master, run
 kubectl get node
+
+=====================================================================================================================
+# After starting the minikube, create a pod.yml file and create labels and apply the yml file.
+vim pod.yml
+kubectl apply -f pod.yml
+kubectl get pods
+kubectl get pods -o wide
+kubectl get pods --show-labels
