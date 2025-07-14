@@ -6,6 +6,9 @@ In this repo I'm documenting the K8s learning from **Kubesimplify K8s Bootcamp**
 Kubernetes (K8s) is an open-source container orchestration platform that automates many of the manual processes involved in deploying, managing, and scaling containerized applications. It essentially allows you to orchestrate clusters of virtual machines and schedule containers to run on those virtual machines. 
 
 ------------------------
+## K8s Architecture
+![image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*NbfqFvRvZnofYn2-T4SAuw.png)
+
 * The **kubectl get nodes** command is used in Kubernetes to list all the nodes in your cluster. Each node represents a worker machine (either a VM or a physical machine) where Kubernetes can run pods.
 ```
 kubectl get nodes
